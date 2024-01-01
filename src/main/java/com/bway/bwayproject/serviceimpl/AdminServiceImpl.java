@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.bway.bwayproject.model.Admin;
 import com.bway.bwayproject.repository.AdminRepository;
 import com.bway.bwayproject.service.AdminService;
+
 @Service
 public class AdminServiceImpl implements AdminService{
 	

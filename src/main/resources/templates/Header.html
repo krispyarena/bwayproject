@@ -23,13 +23,7 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/department">Add Department &nbsp;</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/departmentList">Departments &nbsp;</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/student">Add Student &nbsp;</a>
+          <a class="nav-link" href="/departmentList">Department &nbsp;</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/studentList">Students &nbsp;</a>
@@ -53,7 +47,7 @@
         </li>
       </ul>
       <form class="d-flex" action="/logout">
-		  <p style="color:darkslategray">Welcome [[${session.activeuser.fname}]]</p> &nbsp; &nbsp; &nbsp;
+		  <p style="color:darkorange">Welcome [[${session.activeuser.fname}]]</p> &nbsp; &nbsp; &nbsp;
         <input type = "submit" class="btn btn-danger " value = "Logout">
       </form>
     </div>

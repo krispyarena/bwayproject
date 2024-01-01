@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>edit_department</title>
+</head>
+<body>
+	
+	<th:block th:insert="Header.html"></th:block>
+	
+	<div class="container-fluid">
+			<div class = "card-header text-center bg-info p-2">
+				<h4>Student Edit Form</h4>
+			</div>
+			<div class = "card-body"><br>
+				
+				<form action = "/student/update" method = "post" th:object="${sObject}">
+				
+				<div class="row p-2">
+				<div class="col-4">Name</div>
+					
+				<div class="col-6">
+					<input type="text" th:field = "*{name}" class="form-control">
+				</div>
+					
+				</div>
+				
+				<div class="row p-2">
+				<div class="col-4">Email</div>
+					
+				<div class="col-6">
+					<input type="text" th:field = "*{email}" class="form-control">
+				</div>
+					
+				</div>
+				
+				<div class="row p-2">
+				<div class="col-4">Phone</div>
+					
+				<div class="col-6">
+					<input type="text" th:field = "*{phone}" class="form-control">
+				</div>
+					
+				</div>
+				
+				<div class="row p-2">
+				<div class="col-4"></div>
+					
+				<div class="col-6">
+					<input type="submit" value="Update" class="btn btn-success">
+				</div>
+					
+				</div>
+				<input type = "hidden"  th:field = "*{id}">
+				</form>
+				
+			</div>
+			<div class = "card-footer text-center bg-warning p-1">
+				<h6>©copyright2023@BroadwayInfosys</h6>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

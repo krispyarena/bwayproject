@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Department List</title>
+</head>
+<div>
+	
+<th:block th:insert="Header.html"></th:block>
+ 
+ <div class="container-fluid">
+			<div class = "card-header text-center bg-info p-2">
+				<h4>List of Students</h4>
+			</div>
+			<div class = "card-body"><br>
+			
+			<div>
+			<a href="student/excel">
+						<input type = "submit" value = "Excel" class = "btn btn-success">
+					</a>&nbsp;
+				<a href="student/pdf">
+					<input type = "submit" value = "PDF" class = "btn btn-primary">
+				</a>
+				
+			<a href="/student">
+						<input type = "submit" value = "Add Student" class = "btn btn-success float-end">
+					</a><br>
+			</div><br>
+							
+				<table class = "table">
+					<thead>
+						<tr>
+						
+							<th>Name</th>
+							<th>Faculty</th>
+							<th>Roll</th>
+							<th>Phone</th>
+							<th>Email</th>
+							<th>Date of Birth</th>
+							<th>Address</th>
+							<th>Action</th>
+							
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr th:each = "s: ${sList}">
+							
+							<td>[[${s.name}]]</td>
+							<td>[[${s.department.dept_name}]]</td>
+							<td>[[${s.roll}]]</td>
+							<td>[[${s.phone}]]</td>
+							<td>[[${s.email}]]</td>
+							<td>[[${s.dob}]]</td>
+							<td>[[${s.address.city}]]</td>
+							<td>
+								<a th:href = "@{/student/edit(id=${s.id})}"><input type = "submit" value = "Edit" class = "btn btn-primary"></a>
+								<a th:href = "@{/student/delete(id=${s.id})}"><input type = "submit" value = "Delete" class = "btn btn-danger"></a>
+							</td>
+						</tr>
+					</tbody>
+					
+				</table>
+				
+				
+				
+			</div>
+			<div class = "card-footer text-center bg-warning p-1">
+				<h6>©copyright2023@BroadwayInfosys</h6>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

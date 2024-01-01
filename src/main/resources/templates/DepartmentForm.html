@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>department</title>
+</head>
+<body>
+	
+	<th:block th:insert="Header.html"></th:block>
+	
+	<div class="container-fluid">
+			<div class = "card-header text-center bg-info p-2">
+				<h4>Department Form</h4>
+			</div>
+			<div class = "card-body"><br>
+				
+				<form action = "/department" method = "post">
+				
+				<div class="row p-2">
+				<div class="col-4">Department Name</div>
+					
+				<div class="col-6">
+					<input type="text" name = "dept_name" class="form-control">
+				</div>
+					
+				</div>
+				
+				<div class="row p-2">
+				<div class="col-4">Head of Department[HOD]</div>
+					
+				<div class="col-6">
+					<input type="text" name = "dept_head" class="form-control">
+				</div>
+					
+				</div>
+				
+				<div class="row p-2">
+				<div class="col-4">Department Phone</div>
+					
+				<div class="col-6">
+					<input type="text" name = "dept_phone" class="form-control">
+				</div>
+					
+				</div>
+				
+				<div class="row p-2">
+				<div class="col-4"></div>
+					
+				<div class="col-6">
+					<input type="submit" value="Add" class="btn btn-success">
+				</div>
+					
+				</div>
+				</form>
+				
+			</div>
+			<div class = "card-footer text-center bg-warning p-1">
+				<h6>©copyright2023@BroadwayInfosys</h6>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

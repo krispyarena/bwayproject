@@ -58,4 +58,16 @@ public class AuthController {
 		adminservice.adminSignup(admin);
 		return "Login";
 	}
+	
+	@GetMapping("/home")
+	public String getError() {
+		return "Home";
+	}
+	
+	@GetMapping("/logout")
+	public String getLogout(HttpSession session) {
+		session.invalidate();
+		log.info("----------------Logout Success-----------------------");
+		return "Login";
+	}
 }
