@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Department List</title>
+<title>Student List</title>
 </head>
 <div>
 	
@@ -32,12 +32,10 @@
 						<tr>
 						
 							<th>Name</th>
-							<th>Faculty</th>
 							<th>Roll</th>
 							<th>Phone</th>
 							<th>Email</th>
 							<th>Date of Birth</th>
-							<th>Address</th>
 							<th>Action</th>
 							
 						</tr>
@@ -47,12 +45,10 @@
 						<tr th:each = "s: ${sList}">
 							
 							<td>[[${s.name}]]</td>
-							<td>[[${s.department.dept_name}]]</td>
 							<td>[[${s.roll}]]</td>
 							<td>[[${s.phone}]]</td>
 							<td>[[${s.email}]]</td>
 							<td>[[${s.dob}]]</td>
-							<td>[[${s.address.city}]]</td>
 							<td>
 								<a th:href = "@{/student/edit(id=${s.id})}"><input type = "submit" value = "Edit" class = "btn btn-primary"></a>
 								<a th:href = "@{/student/delete(id=${s.id})}"><input type = "submit" value = "Delete" class = "btn btn-danger"></a>

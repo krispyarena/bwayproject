@@ -62,7 +62,7 @@ public class StudentController {
 		}
 		
 		studentService.deleteStudent(id);
-		return "redirect:/studentListForm";
+		return "redirect:/studentList";
 	}
 	
 	@GetMapping("/student/edit")
@@ -79,7 +79,7 @@ public class StudentController {
 	@PostMapping("/student/update")
 	public String update(@ModelAttribute Student student) {
 		studentService.updateStudent(student);
-		return "redirect:/studentListForm";
+		return "redirect:/studentList";
 	}
 
 
