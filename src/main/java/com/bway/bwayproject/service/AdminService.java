@@ -7,4 +7,5 @@ public interface AdminService {
 	void adminSignup(Admin admin);
 	
 	Admin adminLogin(String email, String password);
+	
 }

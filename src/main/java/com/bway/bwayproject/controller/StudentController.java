@@ -7,10 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.bway.bwayproject.model.Student;
 import com.bway.bwayproject.service.DepartmentService;
 import com.bway.bwayproject.service.StudentService;
+import com.bway.bwayproject.utils.StudentExcelView;
+import com.bway.bwayproject.utils.StudentPdfView;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -24,7 +27,7 @@ public class StudentController {
 	private DepartmentService deptService;
 
 	@GetMapping("/student")
-	public String getEmployee(Model model, HttpSession session) {
+	public String getStudent(Model model, HttpSession session) {
 		
 		if (session.getAttribute("activeuser")==null) {
 			return "Login";
@@ -36,7 +39,7 @@ public class StudentController {
 	}
 	
 	@PostMapping("/student")
-	public String postEmployee(@ModelAttribute Student student) {
+	public String postStudent(@ModelAttribute Student student) {
 		
 		studentService.addStudent(student);
 		
@@ -44,7 +47,7 @@ public class StudentController {
 	}
 	
 	@GetMapping("/studentList")
-	public String getEmployeeList(Model model, HttpSession session) {
+	public String getStudentList(Model model, HttpSession session) {
 		
 		if(session.getAttribute("activeuser")==null) {
 			return "Login";
@@ -80,6 +83,26 @@ public class StudentController {
 	public String update(@ModelAttribute Student student) {
 		studentService.updateStudent(student);
 		return "redirect:/studentList";
+	}
+	
+	@GetMapping("/student/excel")
+	public ModelAndView excel() {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("sList",studentService.getAllStudents());
+		mv.setView(new StudentExcelView());
+		return mv;
+		
+	}
+	
+	@GetMapping("/student/pdf")
+	public ModelAndView pdf() {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("sList",studentService.getAllStudents());
+		mv.setView(new StudentPdfView());
+		return mv;
+		
 	}
 
 

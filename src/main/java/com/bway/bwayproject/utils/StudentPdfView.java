@@ -48,7 +48,7 @@ public class StudentPdfView extends AbstractPdfView {
 					throws Exception {
 		
 		//download PDF with a given filename
-		response.addHeader("Content-Disposition", "attachment;filename=employee.pdf");
+		response.addHeader("Content-Disposition", "attachment;filename=student.pdf");
 
 		//read data from controller
 		@SuppressWarnings("unchecked")
@@ -57,7 +57,7 @@ public class StudentPdfView extends AbstractPdfView {
 		//create element
 		//Font (Family, Size, Style, Color)
 		Font titleFont = new Font(Font.TIMES_ROMAN, 10, Font.BOLD, Color.BLUE);
-		Paragraph title = new Paragraph("EMPLOYEE DATA",titleFont);
+		Paragraph title = new Paragraph("STUDENT DATA",titleFont);
 		title.setAlignment(Element.ALIGN_CENTER);
 		title.setSpacingBefore(20.0f);
 		title.setSpacingAfter(25.0f);
