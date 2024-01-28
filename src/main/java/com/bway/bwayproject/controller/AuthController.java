@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.bway.bwayproject.model.Admin;
 import com.bway.bwayproject.service.AdminService;
 import com.bway.bwayproject.utils.MailUtil;
+import com.bway.bwayproject.utils.VerifyRecaptcha;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +37,9 @@ public class AuthController {
 	}
 	
 	@PostMapping("/login")
-	public String postLogin(@ModelAttribute Admin admin, Model model, HttpSession session) {
+	public String postLogin(@ModelAttribute Admin admin, Model model, HttpSession session, @RequestParam("g-recaptcha-response") String reCode) throws Exception{
+		
+		if(VerifyRecaptcha.verify(reCode)) {
 		
 		Admin adm = adminservice.adminLogin(admin.getEmail(), admin.getPassword());
 		
@@ -50,9 +53,19 @@ public class AuthController {
 			return "Home";
 		}
 		
-		model.addAttribute("message", "Invalid Credentials");
+		else {
+		
+			log.info("--------User not found------------------");
+			model.addAttribute("message", "Invalid Credentials");
 		
 		return "Login";
+		}
+	}
+		else {
+			log.info("---------Maybe a machine--------------");
+			model.addAttribute("message", "You are not human");
+			return "Login";
+		}
 	}
 	
 	
