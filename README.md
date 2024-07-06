@@ -66,7 +66,3 @@ This project is licensed under the MIT License.
 - **Twitter**: [krispyarena](https://x.com/krispyarena)
 - **LinkedIn**: [krispyarena](https://www.linkedin.com/in/krispyarena/)
 - **Discord**: krispyarena
-
----
-
-Feel free to customize any part of this README to better fit your project and personal preferences.
