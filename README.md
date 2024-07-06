@@ -4,10 +4,11 @@ Welcome to the Bway Project! This repository contains the source code and resour
 
 ## Features
 
-- **User Authentication**: Secure login and registration.
-- **CRUD Operations**: Manage data with Create, Read, Update, and Delete functionalities.
-- **Responsive Design**: Optimized for various devices.
-- **Database Integration**: Utilizes SQL, hibernate for efficient data management.
+- **User Authentication**: Secure login and registration
+- **CRUD Operations**: Manage data with Create, Read, Update, and Delete functionalities
+- **Responsive Design**: Optimized for various devices
+- **Database Integration**: Utilizes SQL, hibernate for efficient data management
+- **Spring Boot Integration**: Leverages Spring Boot for easy setup and configuration
 - **Logging**: Keeping logs of the application using LOG4J
 -**reCAPTCHA Integration**: Integrated with Google for reCAPTCHA to distinguish between human and automated access
 
