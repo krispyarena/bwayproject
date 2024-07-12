@@ -10,7 +10,7 @@ Welcome to the Bway Project! This repository contains the source code and resour
 - **Database Integration**: Utilizes SQL, hibernate for efficient data management
 - **Spring Boot Integration**: Leverages Spring Boot for easy setup and configuration
 - **Logging**: Keeping logs of the application using LOG4J
--**reCAPTCHA Integration**: Integrated with Google for reCAPTCHA to distinguish between human and automated access
+- **reCAPTCHA Integration**: Integrated with Google for reCAPTCHA to distinguish between human and automated access
 
 ## Technologies Used
 
